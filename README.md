@@ -6,7 +6,7 @@ vaccine
 
 TeamMembers:
 -----
-Amrit Raj Vardhan
+Amrit Raj Vardhan\
 Yimai Zhao
 
 Project description:
