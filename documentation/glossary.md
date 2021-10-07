@@ -1,6 +1,8 @@
 GLOSSARY
 ----
 ----
+synonyms and description
+-----------------------
 
 **Entity name:** vaccine\
 **Synonyms:** vaccine_database, warehouse for vaccines\
