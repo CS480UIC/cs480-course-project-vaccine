@@ -31,6 +31,8 @@ Description: state entity has Foreign key from country and various attributes li
 
 maxima and minima
 ---------------------------
+<!-- ![alt text](https://github.com/AmritRVardhan/CS480UIC/cs480-course-project-vaccine/blob/[branch]/image.jpg?raw=true) -->
+![Alt text](https://github.com/CS480UIC/cs480-course-project-vaccine/blob/main/documentation/vaccine.drawio.png?raw=true "ER Diagram")
 
 
 
