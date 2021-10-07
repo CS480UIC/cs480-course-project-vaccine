@@ -29,3 +29,7 @@ Description: state entity has Foreign key from country and various attributes li
 **Description:** This contains the orders placed by various countries for vaccines. It maintains details about the quantity and what all vaccines are required. Foreign keys are from vaccine.
 
 
+maxima and minima
+---------------------------
+
+
