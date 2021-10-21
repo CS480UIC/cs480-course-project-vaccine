@@ -61,5 +61,5 @@ cascade and restrict rules on foreign keys that implement dependency relationshi
 attribute types
 -----------------------------
 
-
+Attribute Types are available in the Conceptual/Logical Design
 
