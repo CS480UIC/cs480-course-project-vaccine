@@ -47,6 +47,11 @@ vaccine and country are independent
 
 cascade and restrict actions for dependency relationships
 -----------------------
+order_goesTo_vaccine Cascade restrict\
+country_places_order Cascade Delete\
+state_in_country Cascade Delete\
+zipcode_in_state Cascade Delete\
+person_in_zipcode Cascade Restrict
 
 
 cascade and restrict rules on foreign keys that implement dependency relationships
