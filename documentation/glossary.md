@@ -36,9 +36,14 @@ maxima and minima
 
 dependent entities and dependency relationships
 ---------------
-zip code is dependent on states
-states is dependent on country
-order is dependent on country and vaccine
+person, zip_code, state are dependent\
+country and vaccine are independent\
+
+person depends on zip_code\
+zip_code depends on state\
+state depends on country\
+all_order depends on country\
+vaccine and country are independent\
 
 cascade and restrict actions for dependency relationships
 -----------------------
