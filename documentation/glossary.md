@@ -34,5 +34,19 @@ maxima and minima
 <!-- ![alt text](https://github.com/AmritRVardhan/CS480UIC/cs480-course-project-vaccine/blob/[branch]/image.jpg?raw=true) -->
 ![Alt text](https://github.com/CS480UIC/cs480-course-project-vaccine/blob/main/documentation/vaccine.drawio.png?raw=true "ER Diagram")
 
+dependent entities and dependency relationships
+---------------
+
+cascade and restrict actions for dependency relationships
+-----------------------
+
+
+cascade and restrict rules on foreign keys that implement dependency relationships
+----------------------------
+
+
+attribute types
+-----------------------------
+
 
 
