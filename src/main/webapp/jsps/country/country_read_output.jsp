@@ -26,11 +26,9 @@
   <body>
     <h1>Welcome to the Demo</h1>
     <br>
-    <a href="<c:url value='/findAll'/>" target="body">Please list all the user in the table</a>&nbsp;&nbsp;
+    <a href="<c:url value='user/findAll'/>" target="body">Please list all the user in the table</a>&nbsp;&nbsp;
  
     
   </body>
-
-<button onclick="window.location.href='<c:url value='/jsps/main.jsp'/>'">Continue</button>
 </body>
 </html>

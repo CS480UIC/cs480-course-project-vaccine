@@ -6,7 +6,7 @@
 <html>
   <head>
     
-    <title>Read Entity Output</title>
+    <title>Login</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -21,16 +21,13 @@
   </head>
   
   <body>
-  <h1>Read Entity Output</h1>
-<p style="color: red; font-weight: 900">${msg }</p>
-  <body>
-    <h1>Welcome to the Demo</h1>
-    <br>
-    <a href="<c:url value='/findAll'/>" target="body">Please list all the user in the table</a>&nbsp;&nbsp;
- 
-    
-  </body>
+  <h1>country</h1>
 
-<button onclick="window.location.href='<c:url value='/jsps/main.jsp'/>'">Continue</button>
-</body>
+
+<p style="color: red; font-weight: 900"> ${msg}</p>
+	<a href="<c:url value='/jsps/country/create.jsp'/>" target="_parent">create</a> |&nbsp; 
+	<a href="<c:url value='/jsps/country/delete.jsp'/>" target="_parent">delete</a> |&nbsp; 
+	<a href="<c:url value='/jsps/country/read.jsp'/>" target="_parent">read</a> |&nbsp; 
+	<a href="<c:url value='/jsps/country/update.jsp'/>" target="_parent">update</a> |&nbsp; 
+  </body>
 </html>
