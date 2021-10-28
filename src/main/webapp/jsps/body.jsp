@@ -22,7 +22,7 @@
   </head>
   
   <body>
-    <h1><b>Project description2</b></h1>
+    <h1><b>Project description</b></h1>
     <hr>
     <p>This project is based on vaccination drive. Recently we faced a global pandemic that really brought out the unpreparedness of humans collectively for disease that are easily spread. But it also showed that the magnitude and scalibility of development we can achieve in such a short period of time. The project expands on the same idea.</p>
     <hr>
