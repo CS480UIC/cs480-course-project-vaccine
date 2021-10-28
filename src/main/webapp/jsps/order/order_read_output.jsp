@@ -23,13 +23,14 @@
   <body>
   <h1>Read Entity Output</h1>
 <p style="color: red; font-weight: 900">${msg }</p>
-  <body>
-    <h1>Welcome to the Demo</h1>
-    <br>
-    <a href="<c:url value='/findAll'/>" target="body">Please list all the user in the table</a>&nbsp;&nbsp;
- 
-    
-  </body>
+<form>
+	User    :<input type="text" name="username" value="${entity1.username }" disabled/>
+	<br/>
+	Password：<input type="text" name="password" value="${entity1.password }" disabled/>
+	<br/>
+	Email	：<input type="text" name="email" value="${entity1.email }" disabled/>
+	<br/>
+</form>
 
 <button onclick="window.location.href='<c:url value='/jsps/main.jsp'/>'">Continue</button>
 </body>
