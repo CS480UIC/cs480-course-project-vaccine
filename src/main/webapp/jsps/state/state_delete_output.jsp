@@ -6,7 +6,7 @@
 <html>
   <head>
     
-    <title>Delete Entity</title>
+    <title>Delete Entity State</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -25,13 +25,13 @@
 <p style="color: red; font-weight: 900">${msg }</p>
 <form action="<c:url value='/Entity1ServletDelete'/>" method="post">
 	<input type="hidden" name="method" value="delete"/>
-		<input type="hidden" name="username" value="${entity1.username }"/>
-	User    :<input type="text" name="username" value="${entity1.username }" disabled/>
+		<input type="hidden" name="username" value="${state.username }"/>
+	State Name    :<input type="text" name="username" value="${state.username }" disabled/>
 	<br/>
 	
-	Password：<input type="text" name="password" value="${entity1.password }" disabled/>
+	Population：<input type="text" name="password" value="${state.population }" disabled/>
 	<br/>
-	Email	：<input type="text" name="email" value="${entity1.email }" disabled/>
+	Percentage	：<input type="text" name="email" value="${state.percentage }" disabled/>
 	<br/>
 	<input type="submit" value="Delete Entity1"/>
 </form>
