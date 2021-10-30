@@ -21,16 +21,22 @@
   </head>
   
   <body>
-  <h1>Entity1 Create</h1>
+  <h1>person Create</h1>
 <form action="<c:url value='/Entity1ServletCreate'/>" method="post">
-	User    :<input type="text" name="person_zip_code" value="${form.username }"/>
-	<span style="color: red; font-weight: 900">${errors.username }</span>
+	person_id    :<input type="text" name="person_zip_code" value="${form.person_id }"/>
+	<span style="color: red; font-weight: 900">${errors.person_id }</span>
 	<br/>
-	Password：<input type="password" name="password" value="${form.password }"/>
-	<span style="color: red; font-weight: 900">${errors.password }</span>
+	vaccine_name ：<input type="vaccine_name" name="vaccine_name" value="${form.vaccine_name }"/>
+	<span style="color: red; font-weight: 900">${errors.vaccine_name }</span>
 	<br/>
-	Email	：<input type="text" name="email" value="${form.email }"/>
-	<span style="color: red; font-weight: 900">${errors.email }</span>
+	person_zip_code	：<input type="text" name="person_zip_code" value="${form.person_zip_code }"/>
+	<span style="color: red; font-weight: 900">${errors.person_zip_code }</span>
+	<br/>
+	person_name	：<input type="text" name="person_name" value="${form.person_name }"/>
+	<span style="color: red; font-weight: 900">${errors.person_name }</span>
+	<br/>
+	person_age ：<input type="text" name="person_age" value="${form.person_age }"/>
+	<span style="color: red; font-weight: 900">${errors.person_age }</span>
 	<br/>
 	<input type="submit" value="Create Entity1"/>
 </form>

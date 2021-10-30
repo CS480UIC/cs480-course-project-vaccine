@@ -21,11 +21,14 @@
   </head>
   
   <body>
-  <h1>Delete Entity1</h1>
+  <h1>Delete person</h1>
 <form action="<c:url value='/Entity1ServletDelete'/>" method="post">
 	<input type="hidden" name="method" value="search"/>
-	Delete User   :<input type="text" name="username" value="${form.username }"/>
-	<span style="color: red; font-weight: 900">${errors.username }</span>
+	person_id    :<input type="text" name="person_zip_code" value="${form.person_id }"/>
+	<span style="color: red; font-weight: 900">${errors.person_id }</span>
+	<br/>
+	vaccine_name ：<input type="vaccine_name" name="vaccine_name" value="${form.vaccine_name }"/>
+	<span style="color: red; font-weight: 900">${errors.vaccine_name }</span>
 	<br/>
 	<input type="submit" value="Delete Entity1"/>
 </form>
