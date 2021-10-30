@@ -24,11 +24,13 @@
   <h1>Read Entity Output</h1>
 <p style="color: red; font-weight: 900">${msg }</p>
 <form>
-	User    :<input type="text" name="username" value="${entity1.username }" disabled/>
+	Vaccine Name    :<input type="text" name="vaccine_name" value="${vaccine.vaccine_name }" disabled/>
 	<br/>
-	Password：<input type="text" name="password" value="${entity1.password }" disabled/>
+	Temperature：<input type="text" name="temperature" value="${vaccine.temperature }" disabled/>
 	<br/>
-	Email	：<input type="text" name="email" value="${entity1.email }" disabled/>
+	Vaccine Quantity	：<input type="text" name="vaccine_quantity" value="${vaccine.vaccine_quantity }" disabled/>
+	<br/>
+	Cost：<input type="text" name="cost" value="${vaccine.cost }" disabled/>
 	<br/>
 </form>
 

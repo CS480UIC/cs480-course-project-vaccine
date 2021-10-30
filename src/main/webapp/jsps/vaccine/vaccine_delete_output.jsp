@@ -21,19 +21,21 @@
   </head>
   
   <body>
-  <h1>Delete Entity</h1>
+  <h1>Delete Vaccine instance</h1>
 <p style="color: red; font-weight: 900">${msg }</p>
-<form action="<c:url value='/Entity1ServletDelete'/>" method="post">
+<form action="<c:url value='/vaccineServletDelete'/>" method="post">
 	<input type="hidden" name="method" value="delete"/>
-		<input type="hidden" name="username" value="${entity1.username }"/>
-	User    :<input type="text" name="username" value="${entity1.username }" disabled/>
+		<input type="hidden" name="vaccine_name" value="${vaccine.vaccine_name }"/>
+	Vaccine Name    :<input type="text" name="vaccine_name" value="${vaccine.vaccine_name }" disabled/>
 	<br/>
 	
-	Password：<input type="text" name="password" value="${entity1.password }" disabled/>
+	Temperature：<input type="text" name="temperature" value="${vaccine.temperature }" disabled/>
 	<br/>
-	Email	：<input type="text" name="email" value="${entity1.email }" disabled/>
+	Vaccine Quantity	：<input type="text" name="vaccine_quantity" value="${vaccine.vaccine_quantity }" disabled/>
 	<br/>
-	<input type="submit" value="Delete Entity1"/>
+	Cost	：<input type="text" name="cost" value="${vaccine.cost }" disabled/>
+	<br/>
+	<input type="submit" value="Delete vaccine"/>
 </form>
 
 </body>
