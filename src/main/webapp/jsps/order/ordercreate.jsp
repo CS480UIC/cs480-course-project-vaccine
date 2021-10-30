@@ -21,7 +21,7 @@
   </head>
   
   <body>
-  <h1>Entity1 Create</h1>
+  <h1>order Create</h1>
 <form action="<c:url value='/orderServletCreate'/>" method="post">
 	order_id    :<input type="text" name="order_id" value="${form.username }"/>
 	<span style="color: red; font-weight: 900">${errors.username }</span>
