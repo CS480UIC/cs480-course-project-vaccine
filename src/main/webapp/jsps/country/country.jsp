@@ -25,9 +25,9 @@
 
 
 <p style="color: red; font-weight: 900"> ${msg}</p>
-	<a href="<c:url value='/jsps/country/create.jsp'/>" target="_parent">create</a> |&nbsp; 
-	<a href="<c:url value='/jsps/country/delete.jsp'/>" target="_parent">delete</a> |&nbsp; 
-	<a href="<c:url value='/jsps/country/read.jsp'/>" target="_parent">read</a> |&nbsp; 
-	<a href="<c:url value='/jsps/country/update.jsp'/>" target="_parent">update</a> |&nbsp; 
+	<a href="<c:url value='/jsps/country/countrycreate.jsp'/>" target="_parent">create</a> |&nbsp; 
+	<a href="<c:url value='/jsps/country/countrydelete.jsp'/>" target="_parent">delete</a> |&nbsp; 
+	<a href="<c:url value='/jsps/country/countryread.jsp'/>" target="_parent">read</a> |&nbsp; 
+	<a href="<c:url value='/jsps/country/countryupdate.jsp'/>" target="_parent">update</a> |&nbsp; 
   </body>
 </html>

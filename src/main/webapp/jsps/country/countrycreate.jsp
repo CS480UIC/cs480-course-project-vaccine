@@ -6,7 +6,7 @@
 <html>
   <head>
     
-    <title>Read Entity1</title>
+    <title>Entity1 Create</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -21,23 +21,27 @@
   </head>
   
   <body>
-  <h1>Read Entity1</h1>
-<p style="color: red; font-weight: 900">${msg }</p>
-<form action="<c:url value='/Entity1ServletRead'/>" method="post">
-	<input type="hidden" name="method" value="regist"/>
+  <h1>country Create</h1>
+<form action="<c:url value='/Entity1ServletCreate'/>" method="post">
 	country_id    :<input type="text" name="country_id" value="${form.country_id }"/>
 	<span style="color: red; font-weight: 900">${errors.country_id }</span>
 	<br/>
 	vaccine_name	：<input type="text" name="vaccine_name" value="${form.vaccine_name }"/>
 	<span style="color: red; font-weight: 900">${errors.vaccine_name }</span>
 	<br/>
-<%-- 	Password：<input type="password" name="password" value="${form.password }"/>
-	<span style="color: red; font-weight: 900">${errors.password }</span>
+	country_id：<input type="text" name="contry_name" value="${form.country_name }"/>
+	<span style="color: red; font-weight: 900">${errors.country_name }</span>
 	<br/>
-	Email	：<input type="text" name="email" value="${form.email }"/>
-	<span style="color: red; font-weight: 900">${errors.email }</span>
-	<br/> --%>
-	<input type="submit" value="Read Entity1"/>
+	population	：<input type="text" name="population" value="${form.population }"/>
+	<span style="color: red; font-weight: 900">${errors.population }</span>
+	<br/>
+	cost	：<input type="text" name="cost" value="${form.cost }"/>
+	<span style="color: red; font-weight: 900">${errors.cost }</span>
+	<br/>
+	percentage	：<input type="text" name="percentage" value="${form.percentage }"/>
+	<span style="color: red; font-weight: 900">${errors.percentage}</span>
+	<br/>
+	<input type="submit" value="Create Entity1"/>
 </form>
   </body>
 </html>
