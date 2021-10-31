@@ -5,8 +5,9 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
+    <base href="">
     
-    <title>Update Entity1</title>
+    <title>body</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -21,16 +22,12 @@
   </head>
   
   <body>
-  <h1>Update</h1>
-<form action="<c:url value='/Entity1ServletUpdate'/>" method="post">
-	<input type="hidden" name="method" value="search"/>
-	Update Zip Code   :<input type="text" name="zip_code" value="${form.zip_code }"/>
-	<span style="color: red; font-weight: 900">${errors.username }</span>
-	<br/>
-	Update Vaccine Name   :<input type="text" name="vaccine_name" value="${form.vaccine_name }"/>
-	<span style="color: red; font-weight: 900">${errors.vaccine_name }</span>
-	<br/>
-	<input type="submit" value="Update Zip Code"/>
-</form>
+    <h1>CRUD operations for Entity1 </h1>
+    <br>
+	<a href="<c:url value='/jsps/entity1/entity1create.jsp'/>" target="_parent">Create Entity1</a> |&nbsp; 
+	<a href="<c:url value='/jsps/entity1/entity1read.jsp'/>" target="_parent">Read Entity1</a> |&nbsp;
+	<a href="<c:url value='/jsps/entity1/entity1update.jsp'/>" target="_parent">Update Entity1</a> |&nbsp;	 
+	<a href="<c:url value='/jsps/entity1/entity1delete.jsp'/>" target="_parent">Delete Entity1</a>	
+	    
   </body>
 </html>

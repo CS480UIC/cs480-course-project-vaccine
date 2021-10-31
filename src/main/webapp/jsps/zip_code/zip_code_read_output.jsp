@@ -6,7 +6,7 @@
 <html>
   <head>
     
-    <title>Read Entity Output</title>
+    <title>Read Zip Code</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -21,14 +21,19 @@
   </head>
   
   <body>
-  <h1>Read Entity Output</h1>
+  <h1>Read Zip Code Output</h1>
 <p style="color: red; font-weight: 900">${msg }</p>
 <form>
-	User    :<input type="text" name="username" value="${entity1.username }" disabled/>
+	Zip Code    :<input type="text" name="zipcode" value="${zipcode.zip_code }" disabled/>
 	<br/>
-	Password：<input type="text" name="password" value="${entity1.password }" disabled/>
+	
+	Vaccine Name：<input type="text" name="vaccine_name" value="${zipcode.vaccine_name }" disabled/>
 	<br/>
-	Email	：<input type="text" name="email" value="${entity1.email }" disabled/>
+	State ID	：<input type="text" name="state_id" value="${zipcode.state_id }" disabled/>
+	<br/>
+	Percentage	：<input type="text" name="percentage" value="${zipcode.percentage }" disabled/>
+	<br/>
+	Number Of Vaccination Centres	：<input type="text" name="num_vaccine_centre" value="${zipcode.num_vaccine_centre }" disabled/>
 	<br/>
 </form>
 

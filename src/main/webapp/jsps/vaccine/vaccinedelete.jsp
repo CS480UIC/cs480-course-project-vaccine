@@ -21,7 +21,7 @@
   </head>
   
   <body>
-  <h1>Delete Entity1</h1>
+  <h1>Delete Vaccine</h1>
 <form action="<c:url value='/vaccineServletDelete'/>" method="post">
 	<input type="hidden" name="method" value="search"/>
 	Delete Vaccine   :<input type="text" name="vaccine_name" value="${form.vaccine_name }"/>

@@ -21,18 +21,24 @@
   </head>
   
   <body>
-  <h1>Entity1 Create</h1>
+  <h1>Zip Code Create</h1>
 <form action="<c:url value='/Entity1ServletCreate'/>" method="post">
-	User    :<input type="text" name="username" value="${form.username }"/>
-	<span style="color: red; font-weight: 900">${errors.username }</span>
+	Zip Code    :<input type="text" name="zip_code" value="${form.zip_code }"/>
+	<span style="color: red; font-weight: 900">${errors.zip_code }</span>
 	<br/>
-	Password：<input type="password" name="password" value="${form.password }"/>
+	Vaccine Name：<input type="text" name="vaccine_name" value="${form.vaccine_name }"/>
 	<span style="color: red; font-weight: 900">${errors.password }</span>
 	<br/>
-	Email	：<input type="text" name="email" value="${form.email }"/>
-	<span style="color: red; font-weight: 900">${errors.email }</span>
+	State ID	：<input type="text" name="state_id" value="${form.state_id }"/>
+	<span style="color: red; font-weight: 900">${errors.state_id }</span>
 	<br/>
-	<input type="submit" value="Create Entity1"/>
+	Percentage	：<input type="text" name="percentage" value="${form.percentage }"/>
+	<span style="color: red; font-weight: 900">${errors.percentage }</span>
+	<br/>
+	Number Of Vaccination Centres	：<input type="text" name="num_vaccination_centres" value="${form.num_vaccination_centres }"/>
+	<span style="color: red; font-weight: 900">${errors.num_vaccination_centres }</span>
+	<br/>
+	<input type="submit" value="Create State"/>
 </form>
   </body>
 </html>
