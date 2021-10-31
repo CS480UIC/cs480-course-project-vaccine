@@ -24,11 +24,17 @@
   <h1>Read Entity Output</h1>
 <p style="color: red; font-weight: 900">${msg }</p>
 <form>
-	User    :<input type="text" name="username" value="${entity1.username }" disabled/>
+	State ID    :<input type="text" name="state_id" value="${state.state_id }" disabled/>
 	<br/>
-	Password：<input type="text" name="password" value="${entity1.password }" disabled/>
+	Vaccine Name：<input type="text" name="vaccine_name" value="${state.vaccine_name }" disabled/>
 	<br/>
-	Email	：<input type="text" name="email" value="${entity1.email }" disabled/>
+	Country ID	：<input type="text" name="country_id" value="${state.country_id }" disabled/>
+	<br/>
+	State Name	：<input type="text" name="state_name" value="${state.state_name }" disabled/>
+	<br/>
+	Population	：<input type="text" name="population" value="${state.population }" disabled/>
+	<br/>
+	Percentage	：<input type="text" name="percentage" value="${state.percentage }" disabled/>
 	<br/>
 </form>
 

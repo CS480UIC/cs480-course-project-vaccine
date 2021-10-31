@@ -24,23 +24,23 @@
   <h1>Update Entity</h1>
 <p style="color: red; font-weight: 900">${msg }</p>
 <form>
-	User    :<input type="text" name="username1" value="${entity1.username }" disabled/>
+	Vaccine Name    :<input type="text" name="vaccine_name" value="${vaccine1.vaccine_name }" disabled/>
 	<br/>
 	
-	Password：<input type="text" name="password1" value="${entity1.password }" disabled />
-	<br/>
-	Email	：<input type="text" name="email1" value="${entity1.email }" disabled/>
-	<br/>
+	
 </form>
 <h1>Update the values below</h1>
-<form action="<c:url value='/Entity1ServletUpdate'/>" method="post">
+<form action="<c:url value='/vaccineServletUpdate'/>" method="post">
 		<input type="hidden" name="method" value="update"/>
 				<input type="hidden" name="username" value="${entity1.username }"/>
-	Password：<input type="password" name="password" value="${form.password }"/>
+	Temperature：<input type="text" name="Temperature" value="${form.temperature }"/>
 	<span style="color: red; font-weight: 900">${errors.password }</span>
 	<br/>
-	Email	：<input type="text" name="email" value="${form.email }"/>
-	<span style="color: red; font-weight: 900">${errors.email }</span>
+	Vaccine Quantity	：<input type="text" name="vaccine_quantity" value="${form.vaccine_quantity }"/>
+	<span style="color: red; font-weight: 900">${errors.vaccine_quantity }</span>
+	<br/>
+	Cost	：<input type="text" name="cost" value="${form.cost }"/>
+	<span style="color: red; font-weight: 900">${errors.cost }</span>
 	<br/>
 	<input type="submit" value="Update Entity1"/>
 </form>

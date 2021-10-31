@@ -6,7 +6,7 @@
 <html>
   <head>
     
-    <title>Delete Entity</title>
+    <title>Delete Zip Code</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -23,17 +23,21 @@
   <body>
   <h1>Delete Entity</h1>
 <p style="color: red; font-weight: 900">${msg }</p>
-<form action="<c:url value='/Entity1ServletDelete'/>" method="post">
+<form action="<c:url value='/zipcodeServletDelete'/>" method="post">
 	<input type="hidden" name="method" value="delete"/>
-		<input type="hidden" name="username" value="${entity1.username }"/>
-	User    :<input type="text" name="username" value="${entity1.username }" disabled/>
+		<input type="hidden" name="username" value="${zipcode.username }"/>
+	Zip Code    :<input type="text" name="zipcode" value="${zipcode.zip_code }" disabled/>
 	<br/>
 	
-	Password：<input type="text" name="password" value="${entity1.password }" disabled/>
+	Vaccine Name：<input type="text" name="vaccine_name" value="${zipcode.vaccine_name }" disabled/>
 	<br/>
-	Email	：<input type="text" name="email" value="${entity1.email }" disabled/>
+	State ID	：<input type="text" name="state_id" value="${zipcode.state_id }" disabled/>
 	<br/>
-	<input type="submit" value="Delete Entity1"/>
+	Percentage	：<input type="text" name="percentage" value="${zipcode.percentage }" disabled/>
+	<br/>
+	Number Of Vaccination Centres	：<input type="text" name="num_vaccine_centre" value="${zipcode.num_vaccine_centre }" disabled/>
+	<br/>
+	<input type="submit" value="Delete zipcode"/>
 </form>
 
 </body>
