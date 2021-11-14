@@ -5,9 +5,8 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-    <base href="">
     
-    <title>body</title>
+    <title>Initialize</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -22,13 +21,12 @@
   </head>
   
   <body>
-    <h1>CRUD operations for order </h1>
-    <br>
-	<a href="<c:url value='/jsps/order/ordercreate.jsp'/>" target="_parent">Create order</a> |&nbsp; 
-	<a href="<c:url value='/jsps/order/orderread.jsp'/>" target="_parent">Read order</a> |&nbsp;
-	<a href="<c:url value='/jsps/order/orderupdate.jsp'/>" target="_parent">Update order</a> |&nbsp;	 
-	<a href="<c:url value='/jsps/order/orderdelete.jsp'/>" target="_parent">Delete order</a>	
-	    
+  <h1>Initialize</h1>
+
+<p style="color: red; font-weight: 900">${msg }</p>
+<form action="<c:url value='/InitializeDB'/>" method="post">
+	
+	<input type="submit" value="Initialize DB"/>
+</form>
   </body>
 </html>
-

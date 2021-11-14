@@ -22,18 +22,18 @@ public class Entity1Dao {
 	/**
 	 * user name to connect to the database 
 	 */
-	private String MySQL_user = "vaccine"; //TODO change user
+	private String MySQL_user = "root"; //TODO change user
 	
 	/**
 	 * password of your username to connect to the database
 	 */
-	private String MySQL_password = "vaccines480"; //TODO change password
+	private String MySQL_password = "AmritCS480"; //TODO change password
 
 	public Entity1 findByUsername(String username) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 		Entity1 entity1 = new Entity1();
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection connect = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/bookstore", MySQL_user, MySQL_password);
+			Connection connect = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/vaccine", MySQL_user, MySQL_password);
 		    String sql = "select * from entity1 where username=?";
 		    PreparedStatement preparestatement = connect.prepareStatement(sql); 
 		    preparestatement.setString(1,username);

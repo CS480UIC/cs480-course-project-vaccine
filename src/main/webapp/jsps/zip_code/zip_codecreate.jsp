@@ -22,7 +22,7 @@
   
   <body>
   <h1>Zip Code Create</h1>
-<form action="<c:url value='/Entity1ServletCreate'/>" method="post">
+<form action="<c:url value='/zip_codeServletCreate'/>" method="post">
 	Zip Code    :<input type="text" name="zip_code" value="${form.zip_code }"/>
 	<span style="color: red; font-weight: 900">${errors.zip_code }</span>
 	<br/>

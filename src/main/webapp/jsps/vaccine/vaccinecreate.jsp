@@ -31,6 +31,7 @@
 	<br/>
 	Vaccine Quantity	：<input type="text" name="vaccine_quantity" value="${form.vaccine_quantity }"/>
 	<span style="color: red; font-weight: 900">${errors.vaccine_quantity }</span>
+	<br/>
 	Cost	：<input type="text" name="cost" value="${form.cost }"/>
 	<span style="color: red; font-weight: 900">${errors.cost }</span>
 	<br/>
