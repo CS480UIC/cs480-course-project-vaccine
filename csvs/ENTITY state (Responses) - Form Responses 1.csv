@@ -1,0 +1,6 @@
+state_id,vaccine_name,country_id,state_name,population,percentage
+1,Covid_19,12,Jharkhand,15640321,16.32
+2,Malaria,23,Illinois,63516544,48.91
+2,Hepatitis_A,45,Guangdong,1651321,97.15
+3,Measles,4,Victoria,654987351,56.15
+7,Covid_19,77,Auckland,9846516,34.25

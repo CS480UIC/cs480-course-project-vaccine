@@ -1,0 +1,6 @@
+order_id,vaccine_name,country_id,quantity,date
+123,Covid_19,12,200,2020-09-20
+122,Malaria,23,1000,2010-08-10
+999,Hepatitis_A,45,200,2020-01-22
+989,Measles,4,92,2017-04-15
+9987,Covid_19,77,930,2020-09-20

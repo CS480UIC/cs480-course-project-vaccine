@@ -21,22 +21,25 @@
   </head>
   
   <body>
-  <h1>person Create</h1>
+  <h1>country Create</h1>
 <form action="<c:url value='/Entity1ServletCreate'/>" method="post">
-	person_id    :<input type="text" name="person_zip_code" value="${form.person_id }"/>
-	<span style="color: red; font-weight: 900">${errors.person_id }</span>
+	country_id    :<input type="text" name="country_id" value="${form.country_id }"/>
+	<span style="color: red; font-weight: 900">${errors.country_id }</span>
 	<br/>
-	vaccine_name ：<input type="vaccine_name" name="vaccine_name" value="${form.vaccine_name }"/>
+	vaccine_name	：<input type="text" name="vaccine_name" value="${form.vaccine_name }"/>
 	<span style="color: red; font-weight: 900">${errors.vaccine_name }</span>
 	<br/>
-	person_zip_code	：<input type="text" name="person_zip_code" value="${form.person_zip_code }"/>
-	<span style="color: red; font-weight: 900">${errors.person_zip_code }</span>
+	country_id：<input type="text" name="contry_name" value="${form.country_name }"/>
+	<span style="color: red; font-weight: 900">${errors.country_name }</span>
 	<br/>
-	person_name	：<input type="text" name="person_name" value="${form.person_name }"/>
-	<span style="color: red; font-weight: 900">${errors.person_name }</span>
+	population	：<input type="text" name="population" value="${form.population }"/>
+	<span style="color: red; font-weight: 900">${errors.population }</span>
 	<br/>
-	person_age ：<input type="text" name="person_age" value="${form.person_age }"/>
-	<span style="color: red; font-weight: 900">${errors.person_age }</span>
+	cost	：<input type="text" name="cost" value="${form.cost }"/>
+	<span style="color: red; font-weight: 900">${errors.cost }</span>
+	<br/>
+	percentage	：<input type="text" name="percentage" value="${form.percentage }"/>
+	<span style="color: red; font-weight: 900">${errors.percentage}</span>
 	<br/>
 	<input type="submit" value="Create Entity1"/>
 </form>

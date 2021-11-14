@@ -1,0 +1,6 @@
+person_id,vaccine_name,person_zip_code,person_name,person_age,vaccine_recieved
+123456789,Covid_19,60607,Nobel priset,56,0
+123456789,Measles,60607,Nobel priset,56,1
+123456780,Covid_19,10101,Nobel priset,56,1
+234567891,Malaria,10101,Alan Turing,34,0
+234567891,Hepatitis_A,90947,Alan Turing,34,1

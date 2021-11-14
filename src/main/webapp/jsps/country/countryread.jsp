@@ -21,12 +21,15 @@
   </head>
   
   <body>
-  <h1>Read Entity1</h1>
+  <h1>Read country</h1>
 <p style="color: red; font-weight: 900">${msg }</p>
 <form action="<c:url value='/Entity1ServletRead'/>" method="post">
 	<input type="hidden" name="method" value="regist"/>
-	User    :<input type="text" name="username" value="${form.username }"/>
-	<span style="color: red; font-weight: 900">${errors.username }</span>
+	country_id    :<input type="text" name="country_id" value="${form.country_id }"/>
+	<span style="color: red; font-weight: 900">${errors.country_id }</span>
+	<br/>
+	vaccine_name	：<input type="text" name="vaccine_name" value="${form.vaccine_name }"/>
+	<span style="color: red; font-weight: 900">${errors.vaccine_name }</span>
 	<br/>
 <%-- 	Password：<input type="password" name="password" value="${form.password }"/>
 	<span style="color: red; font-weight: 900">${errors.password }</span>

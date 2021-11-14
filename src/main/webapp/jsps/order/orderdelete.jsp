@@ -21,7 +21,7 @@
   </head>
   
   <body>
-  <h1>Delete Entity1</h1>
+  <h1>Delete order</h1>
 <form action="<c:url value='/Entity1ServletDelete'/>" method="post">
 	<input type="hidden" name="method" value="search"/>
 	Delete order_id   :<input type="text" name="order_id" value="${form.order_id }"/>
