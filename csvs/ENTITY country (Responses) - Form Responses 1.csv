@@ -1,0 +1,6 @@
+country_id,vaccine_name,country_name,population,cost,population_vaccinated
+12,Covid_19,India,19191919,1234,88
+23,Malaria,USA,929292,2344,45
+45,Hepatitis_A,China,98989,12,90
+4,Measles,Australia,898989,34,67
+77,Covid_19,NZ,898898,98,99

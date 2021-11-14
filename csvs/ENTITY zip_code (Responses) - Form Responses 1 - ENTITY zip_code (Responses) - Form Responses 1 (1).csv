@@ -1,0 +1,6 @@
+zip_code,vaccine_name,state_id,percentage,num_vaccination_center
+60607,Covid_19,1,56.19,31
+60607,Measles,3,37.45,19
+10101,Covid_19,7,15.79,64
+10101,Malaria,2,98.15,64
+90947,Hepatitis_A,2,97.45,31
