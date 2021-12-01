@@ -13,6 +13,52 @@
     <url-pattern>/Entity1ServletCreate</url-pattern>
   </servlet-mapping>
   
+
+    <servlet>
+    <description></description>
+    <display-name>findbyvaccine_nameServlet</display-name>
+    <servlet-name>findbyvaccine_nameServlet</servlet-name>
+    <servlet-class>vaccine.web.servlet.findbyvaccine_nameServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>findbyvaccine_nameServlet</servlet-name>
+    <url-pattern>/findbyvaccine_nameServlet</url-pattern>
+  </servlet-mapping>
+
+    <servlet>
+    <description></description>
+    <display-name>vaccineServletCreate</display-name>
+    <servlet-name>vaccineServletCreate</servlet-name>
+    <servlet-class>vaccine.web.servlet.vaccineServletCreate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>vaccineServletCreate</servlet-name>
+    <url-pattern>/vaccineServletCreate</url-pattern>
+  </servlet-mapping>
+
+    <servlet>
+    <description></description>
+    <display-name>vaccineServletDelete</display-name>
+    <servlet-name>vaccineServletDelete</servlet-name>
+    <servlet-class>vaccine.web.servlet.vaccineServletDelete</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>vaccineServletDelete</servlet-name>
+    <url-pattern>/vaccineServletDelete</url-pattern>
+  </servlet-mapping>
+
+    <servlet>
+    <description></description>
+    <display-name>vaccineServletUpdate</display-name>
+    <servlet-name>vaccineServletUpdate</servlet-name>
+    <servlet-class>vaccine.web.servlet.vaccineServletUpdate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>vaccineServletUpdate</servlet-name>
+    <url-pattern>/vaccineServletUpdate</url-pattern>
+  </servlet-mapping>
+
+
   <servlet>
     <description></description>
     <display-name>Entity1ServletRead</display-name>

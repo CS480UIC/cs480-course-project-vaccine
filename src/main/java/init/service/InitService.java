@@ -19,7 +19,7 @@ public class InitService {
 	public void initializeDB() throws InitException, ClassNotFoundException, InstantiationException, IllegalAccessException{
 		
 		// check the user name
-		initDao.initialize();
+		initDao.initDB();
 	}
 	
 	

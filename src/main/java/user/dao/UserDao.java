@@ -26,7 +26,7 @@ public class UserDao {
 	/**
 	 * password of your username to connect to the database
 	 */
-	private String MySQL_password = "AmritCS480";  //TODO change password
+	private String MySQL_password = "111";  //TODO change password
 	
 	/**
 	 * get the Search result with Username 
@@ -67,7 +67,7 @@ public class UserDao {
 	public void add(User user) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection connect = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/bookstore", MySQL_user, MySQL_password);
+			Connection connect = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/vaccine", MySQL_user, MySQL_password);
 			
 			String sql = "insert into user values(?,?,?)";
 			PreparedStatement preparestatement = connect.prepareStatement(sql); 
@@ -86,7 +86,7 @@ public class UserDao {
 		List<Object> list = new ArrayList<>();
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection connect = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/bookstore", MySQL_user, MySQL_password);
+			Connection connect = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/vaccine", MySQL_user, MySQL_password);
 			String sql = "select * from user";
 			PreparedStatement preparestatement = connect.prepareStatement(sql); 
 			ResultSet resultSet = preparestatement.executeQuery();			

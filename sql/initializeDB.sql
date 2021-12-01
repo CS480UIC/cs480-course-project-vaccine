@@ -1,4 +1,4 @@
--- drop database vaccine;
+drop database vaccine;
 create database vaccine;
 use vaccine;
 -- uncomment the below to delete all the tables
@@ -26,6 +26,7 @@ create table vaccine(vaccine_name varchar(20),
                      vaccine_quantity int NOT NULL,
                      cost double NOT NULL,
                      Primary Key (vaccine_name));
+                     
 create table country(country_id smallint, 
 					 vaccine_name varchar(20),
                      country_name varchar(50) NOT NULL,
@@ -34,7 +35,8 @@ create table country(country_id smallint,
                      percentage_vaccinated float NOT NULL,
                      primary key (country_id, vaccine_name),
                      foreign key (vaccine_name) references vaccine(vaccine_name)
-                     on delete cascade on update cascade);
+                     on delete cascade  on update cascade
+                     );
                      
 
 create table vaccine_order(order_id mediumint,
@@ -43,8 +45,10 @@ create table vaccine_order(order_id mediumint,
 					quantity integer not null, 
 					order_date date not null,
                     Primary key(order_id, vaccine_name),
-                    foreign key (country_id, vaccine_name) references country(country_id, vaccine_name) on delete cascade on update cascade,
-                    foreign key (vaccine_name) references vaccine(vaccine_name) on delete cascade on update cascade);
+                    foreign key (country_id, vaccine_name) references country(country_id, vaccine_name) on delete cascade   on update cascade
+                    ,
+                    foreign key (vaccine_name) references vaccine(vaccine_name) on delete cascade    on update cascade
+                    );
 
 create table state(
         state_id smallint not null,
@@ -56,7 +60,7 @@ create table state(
         PRIMARY KEY(state_id,vaccine_name),
             foreign key (country_id, vaccine_name)
             references country(country_id,vaccine_name)
-            on delete cascade on update cascade
+            on delete cascade  on update cascade
 );
 
 create table zip_code(
@@ -81,7 +85,7 @@ create table person(
             PRIMARY KEY(person_id,vaccine_name),
             foreign key (person_zip_code,vaccine_name)
             references zip_code(zip_code,vaccine_name)
-            on delete cascade on update cascade
+            on delete cascade  on update cascade
 );
 -- create index per_age
 -- on person(person_age);

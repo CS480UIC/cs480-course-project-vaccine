@@ -22,7 +22,7 @@
   
   <body>
   <h1>Vaccine Create</h1>
-<form action="<c:url value='/vaccine1ServletCreate'/>" method="post">
+<form action="<c:url value='/vaccineServletCreate'/>" method="post">
 	Vaccine Name    :<input type="text" name="vaccine_name" value="${form.vaccine_name }"/>
 	<span style="color: red; font-weight: 900">${errors.vaccine_name }</span>
 	<br/>

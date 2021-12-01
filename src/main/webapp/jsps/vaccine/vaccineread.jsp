@@ -23,7 +23,7 @@
   <body>
   <h1>Read Vaccine</h1>
 <p style="color: red; font-weight: 900">${msg }</p>
-<form action="<c:url value='/vaccineServletRead'/>" method="post">
+<form action="<c:url value='/findbyvaccine_nameServlet'/>" method="post">
 	<input type="hidden" name="method" value="regist"/>
 	Vaccine Name    :<input type="text" name="vaccine_name" value="${form.vaccine_name }"/>
 	<span style="color: red; font-weight: 900">${errors.username }</span>

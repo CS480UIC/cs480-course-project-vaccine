@@ -6,7 +6,7 @@
 <html>
   <head>
     
-    <title>Initialize</title>
+    <title>Initialize Database</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -21,12 +21,14 @@
   </head>
   
   <body>
-  <h1>Initialize</h1>
+  <h1>Initialize Database</h1>
 
-<p style="color: red; font-weight: 900">${msg }</p>
-<form action="<c:url value='/InitializeDB'/>" method="post">
+
+<p style="color: red; font-weight: 900"> ${msg}</p>
+<form action="<c:url value='/InitializeServlet'/>" method="post">
 	
-	<input type="submit" value="Initialize DB"/>
+	<input type="submit" value="Initialize Database"/>
 </form>
   </body>
 </html>
+
