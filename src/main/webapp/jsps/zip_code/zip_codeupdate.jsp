@@ -6,7 +6,7 @@
 <html>
   <head>
     
-    <title>Update Entity1</title>
+    <title>Update country</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -22,7 +22,7 @@
   
   <body>
   <h1>Update</h1>
-<form action="<c:url value='/Entity1ServletUpdate'/>" method="post">
+<form action="<c:url value='/countryServletUpdate'/>" method="post">
 	<input type="hidden" name="method" value="search"/>
 	Update Zip Code   :<input type="text" name="zip_code" value="${form.zip_code }"/>
 	<span style="color: red; font-weight: 900">${errors.username }</span>

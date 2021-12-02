@@ -6,7 +6,7 @@
 <html>
   <head>
     
-    <title>Read Entity1</title>
+    <title>Read country</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -21,9 +21,9 @@
   </head>
   
   <body>
-  <h1>Read country</h1>
+  <h1>find country</h1>
 <p style="color: red; font-weight: 900">${msg }</p>
-<form action="<c:url value='/Entity1ServletRead'/>" method="post">
+<form action="<c:url value='/findbycountry_idServlet'/>" method="post">
 	<input type="hidden" name="method" value="regist"/>
 	country_id    :<input type="text" name="country_id" value="${form.country_id }"/>
 	<span style="color: red; font-weight: 900">${errors.country_id }</span>
