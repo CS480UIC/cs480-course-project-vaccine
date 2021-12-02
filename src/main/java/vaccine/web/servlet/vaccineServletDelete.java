@@ -62,7 +62,7 @@ public class vaccineServletDelete extends HttpServlet {
   try {
    vaccineservice.delete(info.get(1));
    
-   response.sendRedirect( request.getContextPath() + "/jsps/vaccine/vaccine.jsp");
+   response.sendRedirect( request.getContextPath() + "/vaccineServletFindAll");
   } catch (ClassNotFoundException | vaccineException e) {
    // TODO Auto-generated catch block
    e.printStackTrace();

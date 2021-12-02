@@ -16,6 +16,12 @@ public class InitDao {
     
     
     public void initDB()  {
+    	String MySQL_user = "root"; //TODO change user
+    	
+    	/**
+    	 * password of your username to connect to the database
+    	 */
+    	String MySQL_password = "111"; //TODO change password
         Statement statement;
         PreparedStatement preparedStatement;
         String sqlstmt;
@@ -24,10 +30,10 @@ public class InitDao {
             
             Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
             Connection connect = DriverManager
-                      .getConnection("jdbc:mysql://localhost:3306/vaccine?"
-                              + "user=root&password=111");
+                      .getConnection("jdbc:mysql://localhost:3306/vaccine", MySQL_user, MySQL_password);
             
         statement = connect.createStatement();
+        statement.executeUpdate("DROP TABLE IF EXISTS test");
         statement.executeUpdate("DROP TABLE IF EXISTS vaccine_order");
         statement.executeUpdate("DROP TABLE IF EXISTS person");
         statement.executeUpdate("DROP TABLE IF EXISTS zip_code");
@@ -40,19 +46,26 @@ public class InitDao {
         sqlstmt = "CREATE TABLE vaccine (\r\n"
                 + "vaccine_name VARCHAR(20), \r\n"
                 + "temperature float NOT NULL,\r\n"
+                + "vaccine_quantity int NOT NULL,\r\n"
                 + "Cost Double NOT NULL, \r\n"
                 + "PRIMARY KEY (vaccine_name)\r\n"
                 + ")";
         statement.executeUpdate(sqlstmt);
         
         preparedStatement = connect
-                .prepareStatement("insert into vaccine (vaccine_name, temperature, vaccine_quantity, cost) value (\"United States\", \"USA\", \"Phizer\")" +"");
+                .prepareStatement("insert into vaccine (vaccine_name, temperature, vaccine_quantity, cost) value (\"Covid_19\", 4, 5000, 1000)");
         preparedStatement.executeUpdate();
         preparedStatement = connect
-                .prepareStatement("insert into vaccine (vaccine_name, temperature, vaccine_quantity, cost) value (\"China\", \"CHN\", \"Sinopharm COVID19 Vaccine\")");
+                .prepareStatement("insert into vaccine (vaccine_name, temperature, vaccine_quantity, cost) value (\"Malaria\", 15, 2000, 1234)");
         preparedStatement.executeUpdate();
         preparedStatement = connect
-                .prepareStatement("insert into vaccine (vaccine_name, temperature, vaccine_quantity, cost) value (\"India\", \"IN\", \"Covaxin\")");
+                .prepareStatement("insert into vaccine (vaccine_name, temperature, vaccine_quantity, cost) value (\"Measles\", -8, 439478, 3737)");
+        preparedStatement.executeUpdate();
+        preparedStatement = connect
+                .prepareStatement("insert into vaccine (vaccine_name, temperature, vaccine_quantity, cost) value (\"Hepatitis_A\", -20, 1999, 999)");
+        preparedStatement.executeUpdate();
+        preparedStatement = connect
+                .prepareStatement("insert into vaccine (vaccine_name, temperature, vaccine_quantity, cost) value (\"Mumps\", -2, 292929, 100)");
         preparedStatement.executeUpdate();
         
         
@@ -60,160 +73,156 @@ public class InitDao {
         sqlstmt = "CREATE TABLE country (\r\n"
                 + "country_id Smallint NOT NULL, \r\n"
                 + "vaccine_name VARCHAR(20) ,\r\n"
-                + "country_name VARCHAR(60) NOT NULL, \r\n"
-                + "protection_rate           DECIMAL(3, 1) NOT NULL, \r\n"
-                + "PRIMARY KEY (name)\r\n"
+                + "country_name VARCHAR(50) NOT NULL, \r\n"
+                + "population INTEGER NOT NULL, \r\n"
+                + "cost INTEGER NOT NULL, \r\n"
+                + "percentage_vaccinated float NOT NULL, \r\n"
+                + "PRIMARY KEY (country_id, vaccine_name),\r\n"
+                + "foreign key (vaccine_name) references vaccine(vaccine_name) \r\n"
+                + "on delete cascade on update cascade \r\n"
                 + ")";
         statement.executeUpdate(sqlstmt);
         
         preparedStatement = connect
-                .prepareStatement("insert into vaccine (name, type, company, protection_rate) value (\"Phizer\", \"mRNA\", \"BioNTech\", 95)");
+                .prepareStatement("insert into country (country_id, vaccine_name, country_name, population, cost, percentage_vaccinated) value (12, \"Covid_19\", \"India\", 1382000, 1234, 88)");
         preparedStatement.executeUpdate();
         preparedStatement = connect
-                .prepareStatement("insert into vaccine (name, type, company, protection_rate) value (\"Sinopharm COVID19 Vaccine\", \"Inactivated vaccines\", \"China\", 79.34)");
+        		.prepareStatement("insert into country (country_id, vaccine_name, country_name, population, cost, percentage_vaccinated) value (23, \"Malaria\", \"USA\", 9292922, 2344, 45)");
         preparedStatement.executeUpdate();
         preparedStatement = connect
-                .prepareStatement("insert into vaccine (name, type, company, protection_rate) value (\"Covaxin\", \"Inactivated vaccines\", \"Bharat Biotech\", 77.8)");
+        		.prepareStatement("insert into country (country_id, vaccine_name, country_name, population, cost, percentage_vaccinated) value (45, \"Hepatitis_A\", \"China\", 453029, 350, 90)");
         preparedStatement.executeUpdate();
+        preparedStatement = connect
+        		.prepareStatement("insert into country (country_id, vaccine_name, country_name, population, cost, percentage_vaccinated) value (77, \"Covid_19\", \"NZ\", 8923982, 98, 99)");
+        preparedStatement.executeUpdate();
+        preparedStatement = connect
+        		.prepareStatement("insert into country (country_id, vaccine_name, country_name, population, cost, percentage_vaccinated) value (4, \"Measles\", \"Australia\", 898989, 34, 67)");
+        preparedStatement.executeUpdate();
+        
         
         
         statement = connect.createStatement();  
-        sqlstmt = "CREATE TABLE country_vaccine_relationship (\r\n"
-                + "country_name              VARCHAR(30) NOT NULL, \r\n"
-                + "vaccine_name      VARCHAR(30) NOT NULL,\r\n"
-                + "PRIMARY KEY (country_name, vaccine_name), \r\n"
-                + "FOREIGN KEY (country_name) REFERENCES country(country_name) ON DELETE CASCADE,\r\n"
-                + "FOREIGN KEY (vaccine_name) REFERENCES vaccine(name) ON DELETE CASCADE\r\n"
+        sqlstmt = "CREATE TABLE vaccine_order (\r\n"
+                + "order_id mediumint, \r\n"
+                + "vaccine_name VARCHAR(20),\r\n"
+                + "country_id smallint,\r\n"
+                + "quantity Integer not null,\r\n"
+                + "order_date date not null,\r\n"
+                + "Primary key(order_id, vaccine_name), \r\n"
+                + "foreign key (country_id, vaccine_name) references country(country_id, vaccine_name) on delete cascade on update cascade,\r\n"
+                + "foreign key (vaccine_name) references vaccine(vaccine_name) on delete cascade on update cascade\r\n"
                 + ")";
         statement.executeUpdate(sqlstmt);
         
         preparedStatement = connect
-                .prepareStatement("insert into country_vaccine_relationship (country_name, vaccine_name) value (\"United States\", \"Phizer\")");
+                .prepareStatement("insert into vaccine_order value (\"123\", \"Covid_19\", 12, 200,	\"2020-09-20\")");
         preparedStatement.executeUpdate();
         preparedStatement = connect
-                .prepareStatement("insert into country_vaccine_relationship (country_name, vaccine_name) value (\"China\", \"Sinopharm COVID19 Vaccine\")");
+                .prepareStatement("insert into vaccine_order value (\"122\", \"Malaria\", 23, 1000,	\"2010-08-10\")");
         preparedStatement.executeUpdate();
         preparedStatement = connect
-                .prepareStatement("insert into country_vaccine_relationship (country_name, vaccine_name) value (\"India\", \"Covaxin\")");
+                .prepareStatement("insert into vaccine_order value (\"999\", \"Hepatitis_A\", 45, 200,	\"2020-01-22\")");
+        preparedStatement.executeUpdate();
+        preparedStatement = connect
+                .prepareStatement("insert into vaccine_order value (\"989\", \"Measles\", 4, 92,	\"2017-04-15\")");
+        preparedStatement.executeUpdate();
+        preparedStatement = connect
+                .prepareStatement("insert into vaccine_order value (\"9987\", \"Covid_19\", 77, 930,	\"2020-09-20\")");
         preparedStatement.executeUpdate();
         
         
         statement = connect.createStatement();        
         sqlstmt = "CREATE TABLE state (\r\n"
-                + "state_name              VARCHAR(30) NOT NULL, \r\n"
-                + "country_name      VARCHAR(30) NOT NULL,\r\n"
-                + "population    		 	 INT UNSIGNED NOT NULL, \r\n"
-                + "PRIMARY KEY (state_name),\r\n"
-                + "FOREIGN KEY (country_name) REFERENCES country(country_name) ON DELETE CASCADE \r\n"
+                + "state_id smallint not null, \r\n"
+                + "vaccine_name varchar(50),\r\n"
+                + "country_id smallint, \r\n"
+                + "state_name varchar(50),\r\n"
+                + "population bigint not null,\r\n"
+                + "percentage float4,\r\n"
+                + "PRIMARY KEY(state_id,vaccine_name), \r\n"
+                + "foreign key (country_id, vaccine_name) \r\n"
+                + "references country(country_id,vaccine_name) \r\n"
+                + "on delete cascade on update cascade \r\n"
+                + ")";
+        
+        statement.executeUpdate(sqlstmt);
+        
+        preparedStatement = connect
+                .prepareStatement("insert into state value (1, \"Covid_19\", 12, \"Jharkhand\",	15640321, 16.32)");
+        preparedStatement.executeUpdate();
+        preparedStatement = connect
+                .prepareStatement("insert into state value (2, \"Malaria\",	23,	\"Illinois\", 63516544,	48.91)");
+        preparedStatement.executeUpdate();
+        preparedStatement = connect
+                .prepareStatement("insert into state value (2, \"Hepatitis_A\",	45, \"Guangdong\", 1651321,	97.15)");
+        preparedStatement.executeUpdate();
+        preparedStatement = connect
+                .prepareStatement("insert into state value (3,	\"Measles\", 4,	\"Victoria\", 654987351, 56.15)");
+        preparedStatement.executeUpdate();
+        preparedStatement = connect
+                .prepareStatement("insert into state value (7, \"Covid_19\", 77, \"Auckland\", 9846516,	34.25)");
+        preparedStatement.executeUpdate();
+        
+        statement = connect.createStatement();        
+        sqlstmt = "CREATE TABLE zip_code (\r\n"
+                + "zip_code mediumint, \r\n"
+                + "vaccine_name varchar(50), \r\n"
+                + "state_id smallint not null,  \r\n"
+                + "percentage float4 not null, \r\n"
+                + "num_vaccination_center smallint not null, \r\n"
+                + "PRIMARY KEY(zip_code,vaccine_name), \r\n"
+                + "foreign key (state_id,vaccine_name) \r\n"
+                + "references state(state_id,vaccine_name) \r\n"
+                + "on delete cascade on update cascade \r\n"
                 + ")";
         statement.executeUpdate(sqlstmt);
         
         preparedStatement = connect
-                .prepareStatement("insert into state (state_name, country_name, population) value (\"Illinois\", \"United States\", 12775352)");
+                .prepareStatement("insert into zip_code value (60607, \"Covid_19\",	1,	56.19,	31)");
         preparedStatement.executeUpdate();
         preparedStatement = connect
-                .prepareStatement("insert into state (state_name, country_name, population) value (\"Hubei\", \"China\", 25852345)");
+                .prepareStatement("insert into zip_code value (60607, \"Measles\", 3, 37.45, 19)");
         preparedStatement.executeUpdate();
         preparedStatement = connect
-                .prepareStatement("insert into state (state_name, country_name, population) value (\"Tamil Nadu\", \"India\", 230000000)");
+                .prepareStatement("insert into zip_code value (10101, \"Covid_19\", 7, 15.79, 64)");
         preparedStatement.executeUpdate();
         preparedStatement = connect
-                .prepareStatement("insert into state (state_name, country_name, population) value (\"Washington\", \"United States\", 39613493)");
+                .prepareStatement("insert into zip_code value (10101, \"Malaria\", 2, 98.15, 64)");
         preparedStatement.executeUpdate();
         preparedStatement = connect
-                .prepareStatement("insert into state (state_name, country_name, population) value (\"Arizona\", \"United States\", 29730311)");
-        preparedStatement.executeUpdate();
-        preparedStatement = connect
-                .prepareStatement("insert into state (state_name, country_name, population) value (\"Xinjiang\", \"China\", 126012510)");
-        preparedStatement.executeUpdate();
-        preparedStatement = connect
-                .prepareStatement("insert into state (state_name, country_name, population) value (\"Shandong\", \"China\", 101527453)");
-        preparedStatement.executeUpdate();
-        preparedStatement = connect
-                .prepareStatement("insert into state (state_name, country_name, population) value (\"Telangana\", \"India\", 112374333\r\n"
-                		+ ")");
+                .prepareStatement("insert into zip_code value (90947, \"Hepatitis_A\", 2, 97.45, 31)");
         preparedStatement.executeUpdate();
         
         
         statement = connect.createStatement();        
-        sqlstmt = "CREATE TABLE hospital (\r\n"
-                + "hospital_name              VARCHAR(30) NOT NULL, \r\n"
-                + "state_name      VARCHAR(30) NOT NULL,\r\n"
-                + "city					 	 VARCHAR(30) NOT NULL,  \r\n"
-                + "vaccinated_people		 	 INT UNSIGNED NOT NULL, \r\n"
-                + "PRIMARY KEY (hospital_name),\r\n"
-                + "FOREIGN KEY (state_name) REFERENCES state(state_name) ON DELETE CASCADE \r\n"
+        sqlstmt = "CREATE TABLE person (\r\n"
+                + "person_id varchar(50),\r\n"
+                + "vaccine_name varchar(50), \r\n"
+                + "person_zip_code mediumint not null,  \r\n"
+                + "person_name varchar(50),\r\n"
+                + "person_age smallint,\r\n"
+                + "vaccine_received boolean, \r\n"
+                + "PRIMARY KEY(person_id,vaccine_name),\r\n"
+                + "foreign key (person_zip_code,vaccine_name)\r\n"
+                + "references zip_code(zip_code,vaccine_name)\r\n"
+                + "on delete cascade on update cascade\r\n"
                 + ")";
         statement.executeUpdate(sqlstmt);
         
         preparedStatement = connect
-                .prepareStatement("insert into hospital (hospital_name, state_name, city, vaccinated_people) value (\"UIHealth\", \"Illinois\", \"Chicago\", 18189)");
+                .prepareStatement("insert into person value (123456789,	\"Covid_19\", 60607, \"Nobel priset\", 56, 0)");
         preparedStatement.executeUpdate();
         preparedStatement = connect
-                .prepareStatement("insert into hospital (hospital_name, state_name, city, vaccinated_people) value (\"Wuhan Central Hospital\", \"Hubei\", \"Wuhan\", 100000)");
+                .prepareStatement("insert into person value (123456789, \"Measles\", 60607,	\"Nobel priset\", 56, 1)");
         preparedStatement.executeUpdate();
         preparedStatement = connect
-                .prepareStatement("insert into hospital (hospital_name, state_name, city, vaccinated_people) value (\"Apollo Hospital\", \"Tamil Nadu\", \"Chennai\", 76907)");
+                .prepareStatement("insert into person value (123456780, \"Covid_19\", 10101, \"Nobel priset\", 56, 1)");
         preparedStatement.executeUpdate();
         preparedStatement = connect
-                .prepareStatement("insert into hospital (hospital_name, state_name, city, vaccinated_people) value (\"UW Medical Center\", \"Washington\", \"Seattle\", 55000)");
+                .prepareStatement("insert into person value (234567891,	\"Malaria\", 10101,	\"Alan Turing\", 34, 0)");
         preparedStatement.executeUpdate();
         preparedStatement = connect
-                .prepareStatement("insert into hospital (hospital_name, state_name, city, vaccinated_people) value (\"Banner\", \"Arizona\", \"Tucson\", 73890)");
-        preparedStatement.executeUpdate();
-        preparedStatement = connect
-                .prepareStatement("insert into hospital (hospital_name, state_name, city, vaccinated_people) value (\"People's Hospital\", \"Xinjiang\", \"Urumqi\", 89320)");
-        preparedStatement.executeUpdate();
-        preparedStatement = connect
-                .prepareStatement("insert into hospital (hospital_name, state_name, city, vaccinated_people) value (\"Jinan Hospital\", \"Shandong\", \"Jinan\", 139809)");
-        preparedStatement.executeUpdate();
-        preparedStatement = connect
-                .prepareStatement("insert into hospital (hospital_name, state_name, city, vaccinated_people) value (\"Billroth Hospitals\", \"Tamil Nadu\", \"Chennai\", 92341)");
-        preparedStatement.executeUpdate();
-        preparedStatement = connect
-                .prepareStatement("insert into hospital (hospital_name, state_name, city, vaccinated_people) value (\"Care Hospital\", \"Telangana\", \"Hyderabad\", 67537)");
-        preparedStatement.executeUpdate();
-        
-        
-        statement = connect.createStatement();        
-        sqlstmt = "CREATE TABLE people (\r\n"
-                + "number					 SMALLINT AUTO_INCREMENT NOT NULL,\r\n"
-                + "hospital_name		 	 VARCHAR(30) NOT NULL, \r\n"
-                + "ID      			 	 INT UNSIGNED NOT NULL,  \r\n"
-                + "name			 		 VARCHAR(30) NOT NULL, \r\n"
-                + "age   		     		 TINYINT UNSIGNED NOT NULL,\r\n"
-                + "date_of_birth    		 Date NOT NULL,\r\n"
-                + "PRIMARY KEY (number),\r\n"
-                + "FOREIGN KEY (hospital_name) REFERENCES hospital(hospital_name) ON DELETE CASCADE\r\n"
-                + ")";
-        statement.executeUpdate(sqlstmt);
-        
-        preparedStatement = connect
-                .prepareStatement("insert into people (hospital_name, ID, name, age, date_of_birth) value (\"UIHealth\", 677447670, \"Jiangni\", 21, \"2000-01-04\")");
-        preparedStatement.executeUpdate();
-        preparedStatement = connect
-                .prepareStatement("insert into people (hospital_name, ID, name, age, date_of_birth) value (\"Wuhan Central Hospital\", 671847966, \"Jiaqi Yin\", 21, \"1999-09-19\")");
-        preparedStatement.executeUpdate();
-        preparedStatement = connect
-                .prepareStatement("insert into people (hospital_name, ID, name, age, date_of_birth) value (\"Apollo Hospital\", 657001198, \"Adnan Sami\", 27, \"1994-02-12\")");
-        preparedStatement.executeUpdate();
-        preparedStatement = connect
-                .prepareStatement("insert into people (hospital_name, ID, name, age, date_of_birth) value (\"UIHealth\", 677447675, \"Jiang\", 10, \"2010-01-04\")");
-        preparedStatement.executeUpdate();
-        preparedStatement = connect
-                .prepareStatement("insert into people (hospital_name, ID, name, age, date_of_birth) value (\"UIHealth\", 677447680, \"Ren\", 23, \"1998-01-04\")");
-        preparedStatement.executeUpdate();
-        preparedStatement = connect
-                .prepareStatement("insert into people (hospital_name, ID, name, age, date_of_birth) value (\"Wuhan Central Hospital\", 671847976, \"Jia\", 8, \"2012-09-19\")");
-        preparedStatement.executeUpdate();
-        preparedStatement = connect
-                .prepareStatement("insert into people (hospital_name, ID, name, age, date_of_birth) value (\"Wuhan Central Hospital\", 671847986, \"Yin\", 18, \"2003-09-19\")");
-        preparedStatement.executeUpdate();
-        preparedStatement = connect
-                .prepareStatement("insert into people (hospital_name, ID, name, age, date_of_birth) value (\"Apollo Hospital\", 657001185, \"Adnan\", 15, \"2006-02-12\")");
-        preparedStatement.executeUpdate();
-        preparedStatement = connect
-                .prepareStatement("insert into people (hospital_name, ID, name, age, date_of_birth) value (\"Apollo Hospital\", 657001165, \"Sami\", 19, \"2002-09-19\")");
+                .prepareStatement("insert into person value (234567891,	\"Hepatitis_A\", 90947,	\"Alan Turing\", 34, 1)");
         preparedStatement.executeUpdate();
         
         

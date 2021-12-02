@@ -3,19 +3,17 @@ package init.web.servlet;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.jws.WebService;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import init.dao.InitDao;
-import user.dao.UserDao;
+import init.service.InitException;
+import init.service.InitService;
 import user.domain.User;
 import user.service.UserException;
 import user.service.UserService;
@@ -32,7 +30,6 @@ public class InitializeServlet extends HttpServlet {
      */
     public InitializeServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
@@ -46,11 +43,26 @@ public class InitializeServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		System.out.print("Random");
 		InitDao newObj = new InitDao();
 		newObj.initDB();
 		response.sendRedirect( request.getContextPath() + "/jsps/main.jsp");
-		
+// 		try {
+////			InitService.initializeDB();
+//////			InitService initService = new InitService();
+//////			initService.initializeDB();
+////			System.out.println("Servlet call successful2");
+//
+////			System.out.println("Servlet call successful3");
+////		} 
+//		catch (ClassNotFoundException | InitException e) {
+//			e.printStackTrace();
+//		} catch (InstantiationException e) {
+//			e.printStackTrace();
+//		} catch (IllegalAccessException e) {
+//			e.printStackTrace();
+//		}
+////		
 	}
 
 }

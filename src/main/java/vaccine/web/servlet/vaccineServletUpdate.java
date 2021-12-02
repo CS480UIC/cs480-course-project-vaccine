@@ -67,7 +67,7 @@ public class vaccineServletUpdate extends HttpServlet {
   try {
    vaccineservice.update(form);
    
-   response.sendRedirect( request.getContextPath() + "/jsps/vaccine/vaccine.jsp");
+   response.sendRedirect( request.getContextPath() + "/vaccineServletFindAll");
   } catch (ClassNotFoundException | vaccineException e) {
    // TODO Auto-generated catch block
    e.printStackTrace();
