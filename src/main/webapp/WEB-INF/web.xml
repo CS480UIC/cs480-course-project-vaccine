@@ -2,6 +2,7 @@
 
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
   <display-name>CS480 Demo</display-name>
+  
     <servlet>
     <description></description>
     <display-name>Entity1ServletCreate</display-name>
@@ -13,8 +14,120 @@
     <url-pattern>/Entity1ServletCreate</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+    <description></description>
+    <display-name>vaccineServletComplex2</display-name>
+    <servlet-name>vaccineServletComplex2</servlet-name>
+    <servlet-class>Complex2.web.servlet.vaccineServletComplex2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>vaccineServletComplex2</servlet-name>
+    <url-pattern>/vaccineServletComplex2</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>VaccineServletSimple3</display-name>
+    <servlet-name>VaccineServletSimple3</servlet-name>
+    <servlet-class>VaccineServletSimple3.web.servlet.VaccineServletSimple3</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>VaccineServletSimple3</servlet-name>
+    <url-pattern>/VaccineServletSimple3</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <description></description>
+    <display-name>findbyzip_codeServlet</display-name>
+    <servlet-name>findbyzip_code_idServlet</servlet-name>
+    <servlet-class>zip_code.web.servlet.findbyzip_codeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>findbyzip_codeServlet</servlet-name>
+    <url-pattern>/findbyzip_codeServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>zip_codeServletCreate</display-name>
+    <servlet-name>zip_codeServletCreate</servlet-name>
+    <servlet-class>zip_code.web.servlet.zip_codeServletCreate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>zip_codeServletCreate</servlet-name>
+    <url-pattern>/zip_codeServletCreate</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>stateServletUpdate</display-name>
+    <servlet-name>stateServletUpdate</servlet-name>
+    <servlet-class>state.web.servlet.stateServletUpdate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>stateServletUpdate</servlet-name>
+    <url-pattern>/stateServletUpdate</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>stateServletFindAll</display-name>
+    <servlet-name>stateServletFindAll</servlet-name>
+    <servlet-class>state.web.servlet.stateServletFindAll</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>stateServletFindAll</servlet-name>
+    <url-pattern>/stateServletFindAll</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>findbystate_idServlet</display-name>
+    <servlet-name>findbystate_idServlet</servlet-name>
+    <servlet-class>state.web.servlet.findbystate_idServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>findbystate_idServlet</servlet-name>
+    <url-pattern>/findbystate_idServlet</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <description></description>
+    <display-name>stateServletCreate</display-name>
+    <servlet-name>stateServletCreate</servlet-name>
+    <servlet-class>state.web.servlet.stateServletCreate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>stateServletCreate</servlet-name>
+    <url-pattern>/stateServletCreate</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>stateServletDelete</display-name>
+    <servlet-name>stateServletDelete</servlet-name>
+    <servlet-class>state.web.servlet.stateServletDelete</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>stateServletDelete</servlet-name>
+    <url-pattern>/stateServletDelete</url-pattern>
+  </servlet-mapping>    
+  
+  
+  <servlet>
+    <description></description>
+    <display-name>vaccine_orderServletCreate</display-name>
+    <servlet-name>vaccine_orderServletCreate</servlet-name>
+    <servlet-class>vaccine_order.web.servlet.vaccine_orderServletCreate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>vaccine_orderServletCreate</servlet-name>
+    <url-pattern>/vaccine_orderServletCreate</url-pattern>
+  </servlet-mapping>
+  
 
-    <servlet>
+   <servlet>
     <description></description>
     <display-name>vaccineServletFindAll</display-name>
     <servlet-name>vaccineServletFindAll</servlet-name>

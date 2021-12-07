@@ -33,6 +33,7 @@ public class vaccineServletCreate extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.print("test");
 		doPost(request,response);
 	}
 
@@ -40,6 +41,7 @@ public class vaccineServletCreate extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.print("test2");
 		vaccineService vaccineservice = new vaccineService();
 		Map<String,String[]> paramMap = request.getParameterMap();
 		vaccine form = new vaccine();
