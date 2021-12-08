@@ -21,15 +21,27 @@
   </head>
   
   <body>
-  <h1>Update</h1>
+  <h1>country Update</h1>
 <form action="<c:url value='/countryServletUpdate'/>" method="post">
-	<input type="hidden" name="method" value="search"/>
-	Update country_id   :<input type="text" name="country_id" value="${form.country_id }"/>
+	country_id    :<input type="text" name="country_id" value="${form.country_id }"/>
 	<span style="color: red; font-weight: 900">${errors.country_id }</span>
 	<br/>
-	Update vaccine_name   :<input type="text" name="vaccine_name" value="${form.vaccine_name }"/>
+	vaccine_name	：<input type="text" name="vaccine_name" value="${form.vaccine_name }"/>
 	<span style="color: red; font-weight: 900">${errors.vaccine_name }</span>
-	<input type="submit" value="Update country"/>
+	<br/>
+	country_name：<input type="text" name="contry_name" value="${form.country_name }"/>
+	<span style="color: red; font-weight: 900">${errors.country_name }</span>
+	<br/>
+	population	：<input type="text" name="population" value="${form.population }"/>
+	<span style="color: red; font-weight: 900">${errors.population }</span>
+	<br/>
+	cost	：<input type="text" name="cost" value="${form.cost }"/>
+	<span style="color: red; font-weight: 900">${errors.cost }</span>
+	<br/>
+	percentage_vaccinated	：<input type="text" name="percentage_vaccinated" value="${form.percentage_vaccinated }"/>
+	<span style="color: red; font-weight: 900">${errors.percentage_vaccinated}</span>
+	<br/>
+	<input type="submit" value="Create country"/>
 </form>
   </body>
 </html>

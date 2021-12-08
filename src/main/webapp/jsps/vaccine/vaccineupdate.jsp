@@ -41,7 +41,7 @@
  cost    :<input type="text" name="cost" value="${form.cost }"/>
  <span style="color: red; font-weight: 900">${errors.cost }</span>
  <br/>
- <input type="submit" value="People Update"/>
+ <input type="submit" value="vaccine Update"/>
 </form>
   </body>
 </html>

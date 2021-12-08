@@ -2,7 +2,56 @@
 
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
   <display-name>CS480 Demo</display-name>
+
   
+
+
+
+    <servlet>
+    <description></description>
+    <display-name>countryServletDelete</display-name>
+    <servlet-name>countryServletDelete</servlet-name>
+    <servlet-class>country.web.servlet.countryServletDelete</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>countryServletDelete</servlet-name>
+    <url-pattern>/countryServletDelete</url-pattern>
+  </servlet-mapping>
+
+    <servlet>
+    <description></description>
+    <display-name>countryServletFindAll</display-name>
+    <servlet-name>countryServletFindAll</servlet-name>
+    <servlet-class>country.web.servlet.countryServletFindAll</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>countryServletFindAll</servlet-name>
+    <url-pattern>/countryServletFindAll</url-pattern>
+  </servlet-mapping>
+
+    <servlet>
+    <description></description>
+    <display-name>countryServletUpdate</display-name>
+    <servlet-name>countryServletUpdate</servlet-name>
+    <servlet-class>country.web.servlet.countryServletUpdate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>countryServletUpdate</servlet-name>
+    <url-pattern>/countryServletUpdate</url-pattern>
+  </servlet-mapping>
+
+    <servlet>
+    <description></description>
+    <display-name>findbycountry_idServlet</display-name>
+    <servlet-name>findbycountry_idServlet</servlet-name>
+    <servlet-class>country.web.servlet.findbycountry_idServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>findbycountry_idServlet</servlet-name>
+    <url-pattern>/findbycountry_idServlet</url-pattern>
+  </servlet-mapping>
+
+
     <servlet>
     <description></description>
     <display-name>Entity1ServletCreate</display-name>
@@ -14,6 +63,7 @@
     <url-pattern>/Entity1ServletCreate</url-pattern>
   </servlet-mapping>
   
+
   <servlet>
     <description></description>
     <display-name>vaccineServletComplex2</display-name>
@@ -126,6 +176,18 @@
     <url-pattern>/vaccine_orderServletCreate</url-pattern>
   </servlet-mapping>
   
+
+    <servlet>
+    <description></description>
+    <display-name>countryServletCreate</display-name>
+    <servlet-name>countryServletCreate</servlet-name>
+    <servlet-class>country.web.servlet.countryServletCreate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>countryServletCreate</servlet-name>
+    <url-pattern>/countryServletCreate</url-pattern>
+  </servlet-mapping>
+
 
    <servlet>
     <description></description>
