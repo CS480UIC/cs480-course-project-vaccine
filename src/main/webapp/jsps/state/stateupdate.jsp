@@ -6,7 +6,7 @@
 <html>
   <head>
     
-    <title>Update Entity1</title>
+    <title>Update State</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -22,15 +22,30 @@
   
   <body>
   <h1>Update</h1>
-<form action="<c:url value='/Entity1ServletUpdate'/>" method="post">
+<form action="<c:url value='/stateServletUpdate'/>" method="post">
 	<input type="hidden" name="method" value="search"/>
 	Update State ID   :<input type="text" name="state_id" value="${form.state_id }"/>
-	<span style="color: red; font-weight: 900">${errors.username }</span>
+	<span style="color: red; font-weight: 900">${errors.state_id }</span>
 	<br/>
 	Update Vaccine Name   :<input type="text" name="vaccine_name" value="${form.vaccine_name }"/>
 	<span style="color: red; font-weight: 900">${errors.vaccine_name }</span>
 	<br/>
-	<input type="submit" value="Update Entity1"/>
+	<input type="hidden" name="method" value="search"/>
+	Update Country ID   :<input type="text" name="country_id" value="${form.country_id }"/>
+	<span style="color: red; font-weight: 900">${errors.country_id }</span>
+	<br/>
+	<input type="hidden" name="method" value="search"/>
+	Update State Name   :<input type="text" name="state_name" value="${form.state_name }"/>
+	<span style="color: red; font-weight: 900">${errors.state_name }</span>
+	<br/>
+	<input type="hidden" name="method" value="search"/>
+	Update Population   :<input type="text" name="population" value="${form.population }"/>
+	<span style="color: red; font-weight: 900">${errors.population }</span>
+	<br/>
+	Update Percentage   :<input type="text" name="percentage" value="${form.percentage}"/>
+	<span style="color: red; font-weight: 900">${errors.percentage}</span>
+	<br/>
+	<input type="submit" value="Update State"/>
 </form>
   </body>
 </html>

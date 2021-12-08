@@ -22,7 +22,7 @@
   
   <body>
   <h1>State Create</h1>
-<form action="<c:url value='/Entity1ServletCreate'/>" method="post">
+<form action="<c:url value='/stateServletCreate'/>" method="post">
 	State ID    :<input type="text" name="state_id" value="${form.state_id }"/>
 	<span style="color: red; font-weight: 900">${errors.state_id }</span>
 	<br/>
@@ -41,7 +41,7 @@
 	Percentage    :<input type="text" name="percentage" value="${form.percentage }"/>
 	<span style="color: red; font-weight: 900">${errors.percentage }</span>
 	<br/>
-	<input type="submit" value="Create Entity1"/>
+	<input type="submit" value="Create State"/>
 </form>
   </body>
 </html>

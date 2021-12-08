@@ -23,7 +23,7 @@
   <body>
   <h1>Delete Entity</h1>
 <p style="color: red; font-weight: 900">${msg }</p>
-<form action="<c:url value='/Entity1ServletDelete'/>" method="post">
+<form action="<c:url value='/stateServletDelete'/>" method="post">
 	<input type="hidden" name="method" value="delete"/>
 		<input type="hidden" name="username" value="${state.username }"/>
 	State Name    :<input type="text" name="username" value="${state.username }" disabled/>
@@ -33,7 +33,7 @@
 	<br/>
 	Percentage	：<input type="text" name="email" value="${state.percentage }" disabled/>
 	<br/>
-	<input type="submit" value="Delete Entity1"/>
+	<input type="submit" value="Delete State"/>
 </form>
 
 </body>

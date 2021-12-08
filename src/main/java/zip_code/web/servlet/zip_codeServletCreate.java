@@ -2,6 +2,7 @@ package zip_code.web.servlet;
 
 import java.io.IOException;
 import java.util.ArrayList;
+
 import java.util.List;
 import java.util.Map;
 
@@ -21,7 +22,6 @@ import zip_code.service.zip_codeService;
 
 public class zip_codeServletCreate extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -33,6 +33,7 @@ public class zip_codeServletCreate extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.print("test");
 		doPost(request,response);
 	}
 
@@ -40,6 +41,7 @@ public class zip_codeServletCreate extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.print("testzip");
 		zip_codeService zip_codeservice = new zip_codeService();
 		Map<String,String[]> paramMap = request.getParameterMap();
 		zip_code form = new zip_code();
@@ -51,13 +53,12 @@ public class zip_codeServletCreate extends HttpServlet {
 		}
 		form.setZip_code(Integer.parseInt(info.get(0)));
 		form.setVaccine_name(info.get(1));
-		form.setState_id(Integer.parseInt(info.get(2)));	
-		form.setPercentage(Double.parseDouble(info.get(3)));
+		form.setState_id(Integer.parseInt(info.get(2)));
+		form.setPercentage(Float.parseFloat(info.get(3)));
 		form.setNum_vaccination_center(Integer.parseInt(info.get(4)));
-		
 		try {
 			zip_codeservice.insert(form);
-			response.sendRedirect( request.getContextPath() + "/jsps/main.jsp");
+			response.sendRedirect( request.getContextPath() + "/jsps/zip_code/zip_code.jsp");
 			
 		} catch (ClassNotFoundException | zip_codeException e) {
 			e.printStackTrace();

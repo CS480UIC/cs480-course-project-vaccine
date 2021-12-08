@@ -23,7 +23,7 @@
   <body>
   <h1>Read State</h1>
 <p style="color: red; font-weight: 900">${msg }</p>
-<form action="<c:url value='/Entity1ServletRead'/>" method="post">
+<form action="<c:url value='/findbystate_idServlet'/>" method="post">
 	<input type="hidden" name="method" value="regist"/>
 	State ID    :<input type="text" name="state_id" value="${form.state_id }"/>
 	<span style="color: red; font-weight: 900">${errors.state_id }</span>
