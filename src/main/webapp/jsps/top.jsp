@@ -44,6 +44,8 @@
 			<a href="<c:url value='/jsps/state/state.jsp'/>" target="_parent">state</a> |&nbsp; 
 			<a href="<c:url value='/jsps/order/order.jsp'/>" target="_parent">order</a> |&nbsp;
 			<a href="<c:url value='/jsps/initialize/init.jsp'/>" target="_parent">initialize</a> |&nbsp;
+			<a href="<c:url value='/jsps/simple_result/simpleall.jsp'/>" target="_parent">simple</a> |&nbsp;
+			<a href="<c:url value='/jsps/complex/complexall.jsp'/>" target="_parent">complex</a>
 			 							
 		</c:when>
 		<c:otherwise>

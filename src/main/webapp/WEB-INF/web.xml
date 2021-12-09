@@ -3,6 +3,16 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
   <display-name>CS480 Demo</display-name>
 
+    <servlet>
+    <description></description>
+    <display-name>VaccineServletSimple3</display-name>
+    <servlet-name>VaccineServletSimple3</servlet-name>
+    <servlet-class>VaccineSimple3.web.servlet.VaccineServletSimple3</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>VaccineServletSimple3</servlet-name>
+    <url-pattern>/VaccineServletSimple3</url-pattern>
+  </servlet-mapping>
 
     <servlet>
     <description></description>
@@ -14,6 +24,30 @@
     <servlet-name>countryServletDelete</servlet-name>
     <url-pattern>/countryServletDelete</url-pattern>
   </servlet-mapping>
+  
+<servlet>
+    <description></description>
+    <display-name>vaccineServletComplex1</display-name>
+    <servlet-name>vaccineServletComplex1</servlet-name>
+    <servlet-class>complex1.web.servlet.vaccineServletComplex1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>vaccineServletComplex1</servlet-name>
+    <url-pattern>/vaccineServletComplex1</url-pattern>
+  </servlet-mapping>
+
+<servlet>
+    <description></description>
+    <display-name>vaccineServletComplex2</display-name>
+    <servlet-name>vaccineServletComplex2</servlet-name>
+    <servlet-class>complex2.web.servlet.vaccineServletComplex2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>vaccineServletComplex2</servlet-name>
+    <url-pattern>/vaccineServletComplex2</url-pattern>
+  </servlet-mapping>
+
+
 
     <servlet>
     <description></description>
@@ -84,6 +118,17 @@
 
     <servlet>
     <description></description>
+    <display-name>CountryServletSimple2</display-name>
+    <servlet-name>CountryServletSimple2</servlet-name>
+    <servlet-class>CountrySimple2.web.servlet.CountryServletSimple2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CountryServletSimple2</servlet-name>
+    <url-pattern>/CountryServletSimple2</url-pattern>
+  </servlet-mapping>
+
+ <servlet>
+    <description></description>
     <display-name>findbyvaccine_nameServlet</display-name>
     <servlet-name>findbyvaccine_nameServlet</servlet-name>
     <servlet-class>vaccine.web.servlet.findbyvaccine_nameServlet</servlet-class>
@@ -92,6 +137,7 @@
     <servlet-name>findbyvaccine_nameServlet</servlet-name>
     <url-pattern>/findbyvaccine_nameServlet</url-pattern>
   </servlet-mapping>
+
 
     <servlet>
     <description></description>

@@ -12,7 +12,7 @@ CREATE VIEW `612` AS
 
 select * 
 from vaccine
-where cost > 1000
+where cost < 1000
 order by cost ;
 
 CREATE VIEW `622` AS
